@@ -9,7 +9,7 @@ int main()
     {
       printf("2 nghiem phan biet: %4.2f%4.2f", (-b- sqrt(delta))/(2*a), (-b + sqrt(delta))/(2*a));    
     }
-  elseif (delta == 0) 
+  else if (delta == 0) 
     {
       printf("nghiem kep : %4.2f", -b/(2*a));
     }
