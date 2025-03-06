@@ -6,8 +6,8 @@ int main()
   for (int i = 0; i<10; i++) 
   {
     int a;
-    scanf("%d\n", &a);
+    scanf("%4d", &a);
     tong+=a;
   } 
-  printf("%d", tong);
+  printf("%4d", tong);
 }
