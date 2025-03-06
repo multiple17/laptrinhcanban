@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+  int a,b,min,max,n,m,r;
+  scanf("%d",&a);
+  scanf("%d",&b);
+  n = a;
+  m = b;
+  r = n%m;
+  while (r) {
+    n = m;
+    m = r;
+    r = n%m;
+    }
+  printf("uoc chung lon nhat la %d\n", m);
+  if ( a <b) {
+    min = a;
+    max = b;
+  }
+  else {
+    min = b;
+    max = a;
+  }
+  while (min%max!=0) {
+    min+=min;
+  }
+  printf("boi chung nho nhat la %d", min);
+}
