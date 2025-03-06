@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<math.h>
+int main() 
+{
+  int a,c;
+  c = 0;
+  scanf("%d", &a);
+  if ((a == 2)||(a==3))
+  {
+        printf("so da cho la so nguyen to");
+  }
+  else
+  {
+      for (int i=1; i<= sqrt(a); i++) 
+        {
+        if ((a%i) != 0)
+          {
+          c = 1;
+          continue;
+          }
+        else {
+          printf("khong phai so nguyen to");
+          c=0;
+          break;
+          }
+        if (c ==1) {
+          printf("so da cho la so nguyen to");
+            }
+        }
+  }
+}
+  
+  
