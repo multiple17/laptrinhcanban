@@ -1,2 +1,11 @@
 #include<stdio.h>
-
+int main()
+{
+  int n, giaithua;
+  giaithua=1;
+  scanf("%d", &n);
+  for (int i =1; i<= n; i++) {
+    giaithua*=i;
+  }
+  printf("%d giai thua bang %d", n, giaithua);
+}
