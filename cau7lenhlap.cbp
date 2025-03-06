@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+  float tong = 0;
+  int n;
+  scanf("%d", &n);
+  for (float i = 1; i<=n; i++) {
+    tong=tong+ (1/i);
+  }
+  printf("tong day so la %.2f", tong);
+}
