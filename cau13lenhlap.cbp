@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+  float x,eps,s,tong,m,t;
+  m =1.0;
+  int i =1;
+  tong=1.0;
+  t=1;
+  printf("nhap so x: ");
+  scanf("%f", &x);
+  printf("nhap so epsilon: ");
+  scanf("%f",&eps);
+  while (s<=eps){
+    m=m/i;
+    t=t*x;
+    s = t/m;
+    tong+=s;
+    i++;
+  }
+  printf("e mu %f = %f", x,tong);
+}
