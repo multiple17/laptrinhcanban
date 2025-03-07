@@ -1,28 +1,47 @@
 #include<stdio.h>
+#include<string.h>
 void reverseString(char str[])
 {
   int l = strlen(str);
-  for (int i =0; i< l/2; i++){
-    char temp = str[i];
-    str[i] = str[l-i-1];
-    str[l-i-1] = temp;
+  for (int i =l-1; i>= 0; i--){
+    printf("%c",str[i]);
     }
 }
 
 int main()
 {
-  int n,n2,n8,n16,g2,g8,g16;
-  char r2[],r8[],r16[];
+  int n,n2,n8,n16,g2,g8,g16,i1,i2,i3;
+  char r2[100],r8[100],r16[100];
   printf("nhap so can chuyen:");
   scanf("%d", &n);
-  n2=n8=n16=n;
-  while (n>0){
+  n2=n;
+  n8=n;
+  n16=n;
+  i1=i2=i3=0;
+  while (n2!=0){
     g2 = n2%2;
     n2=n2/2;
-    r2 = r2+char(g2);
+    r2[i1]=g2;
+    i1++;
+  }
+  while (n8!=0){
+    g8 = n8%8;
+    n8=n8/8;
+    r8[i2]=g8;
+    i2++;
+  }
+  while (n16!=0){
+    g16 = n16%16;
+    n16=n16/16;
+    r16[i3]=g16;
+    i3++;
   }
   reverseString(r2);
-  printf("%s", r2);
+  printf("\n");
+  reverseString(r8);
+  printf("\n");
+  reverseString(r16);
+  printf("\n");
 }
   
   
