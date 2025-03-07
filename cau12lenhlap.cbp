@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+  float x,eps,s,tong,m;
+  m =1;
+  int i =0;
+  tong=0;
+  printf("nhap so x: ");
+  scanf("%f", &x);
+  printf("nhap so epsilon: ");
+  scanf("%f",&eps);
+  while (s<=eps){
+    m=m/(2*i+1);
+    s = pow(-1,i)*pow(x,2*i+1)/m;
+    tong+=s;
+    i++;
+  }
+  printf("sin(%f) = %f", x,tong);
+}
