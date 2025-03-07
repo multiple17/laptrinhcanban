@@ -1,16 +1,22 @@
 #include<stdio.h>
 int main() 
 {
-  int n;
+  int n,check;
+    check = 1;
   scanf("%d", &n);
   if (n<=2) {
-    printf('1');
+    printf("so fibonacci thu %d la %d",n,check);
   }
   else {
-    int n1,n2,f1,f2;
+    long int n1,n2,f1,f2;
     n1 = 1;
     n2=1;
-    f1 = f2 = 0;
+    f1 = 0;
     for(int i = 3; i<=n;i++){
       f1 = n1+n2;
-      
+      n2 = n1;
+      n1 = f1;
+        }
+  printf("so fibonacci thu %d la: %ld", n,f1);
+    }
+}      
