@@ -1,20 +1,31 @@
 #include<stdio.h>
 #include<math.h>
+int giaithua(a) {
+    int g =1;
+    for (int i = 1; i<=a;i++){
+        g=g*i;
+    }
+    return (g);
+}
 int main()
 {
-  float x,eps,s,tong,m;
+  float x,eps,s,tong,m,n,t;
   m =1;
-  int i =0;
+  n=-1;
+  int i =1;
   tong=0;
   printf("nhap so x: ");
   scanf("%f", &x);
   printf("nhap so epsilon: ");
   scanf("%f",&eps);
   while (s<=eps){
-    m=m/(2*i+1);
-    s = pow(-1,i)*pow(x,2*i+1)/m;
+    m=m/giaithua(2*i+1);
+    n=n*(-1);
+    t=t*x*x;
+    s = n*t/m;
     tong+=s;
     i++;
   }
   printf("sin(%f) = %f", x,tong);
+  return (0);
 }
