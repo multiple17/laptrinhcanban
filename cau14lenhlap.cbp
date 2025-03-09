@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+  int nam;
+  nam =2014;
+  float gdp,tocdotangtruong,check;
+  printf("tong GDP nam %d la: ");
+  scanf("%d", &gdp);
+  check = gdp;
+  printf("toc do tang truong la: ");
+  scanf("%f", %tocdotangtruong);
+  printf("tong GDP qua cac nam la:\n");
+  printf("nam \t GDP\n");
+  while (gdp <= 2*check){
+    printf("%d\t%.2f", nam, gdp);
+    nam+=1;
+    gdp = gdp + tocdotangtruong*gdp;
+  }
+}
