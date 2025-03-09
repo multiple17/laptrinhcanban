@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+  int n;
+  float A,tile;
+  tile = 1.0045;
+  printf("so tien gui tiet kiem la: ");
+  scanf("%f", &A);
+  printf("so thang gui tiet kiem la: ");
+  scanf("%d", &n);
+  for (int i = 1; i<=n; i++) {
+    A = A+ A*tile;
+  }
+  printf("sau %d thang rut duoc so tien la: %f dong", n, A);
+}
+  
