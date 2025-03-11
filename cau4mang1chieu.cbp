@@ -8,4 +8,5 @@ void nhap_day(int a[], int *n, char ten) {
     }
 }
 int main() {
-  int a[20], 
+  int a[20], n, i; 
+  nhap_day(a, *n, 'A'
