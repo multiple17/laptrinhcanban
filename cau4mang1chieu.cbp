@@ -1,1 +1,11 @@
 #include<stdio.h>
+void nhap_day(int a[], int *n, char ten) {
+  int i;
+  printf("Nhap so phan tu cua day %c:",ten);
+  scanf("%d", &n);
+  for (int i = 0; i<*n; i++) {
+    scanf("%d", &a+i);
+    }
+}
+int main() {
+  int a[20], 
