@@ -1,0 +1,33 @@
+#include<stdio.h>
+void nhap_day(int a[], int *n, char ten) {
+  int i;
+  printf("Nhap so phan tu cua day %c:",ten);
+  scanf("%d", &n);
+  for (int i = 0; i<*n; i++) {
+    scanf("%d", &a+i);
+    }
+}
+int main() 
+{
+  int n,a[20],i,ssd,ssa;
+  float tongam,tongduong;
+  ssa =tongam=0;
+  ssd=tongduong=0;
+  nhap_day(a,&n, 'A');
+  for (int i = 0; i<n; i++) {
+    if (a+i < 0) {
+      tongam = tongam + a[i];
+      ssa++;
+    }
+    else {
+      tongduong = tongduong + a[i];
+      ssd++;
+    }
+  printf("tong cua mang %c la %d ", ten, tongduong+tongam);
+  printf("trung binh cong cua mang %c la %.2f", ten, (tongduong+tongam)/n);
+  printf("tong cac so duong cua mang %c la %d", ten, tongduong);
+  printf("trung binh cong cac so duong cua mang %c la %.2f",ten,tongduong/ssd);
+  printf("tong cac so am cua mang %c la %d", ten, tongam);
+  printf("trung binh cong cac so am cua mang %c la %.2f",ten,tongam/ssa);
+}
+  
