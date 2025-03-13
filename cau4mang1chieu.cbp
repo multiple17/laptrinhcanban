@@ -11,7 +11,7 @@ int main() {
   int a[20], n, i,max,min,imax,imin; 
   max = min = 0;
   nhap_day(a, &n, 'A');
-  for (int i = 0; i<= n; i++) {
+  for (int i = 0; i< n; i++) {
     if (a[i] > max) {
       a[i] = max;
       imax = i;
