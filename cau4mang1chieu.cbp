@@ -8,5 +8,19 @@ void nhap_day(int a[], int *n, char ten) {
     }
 }
 int main() {
-  int a[20], n, i; 
-  nhap_day(a, *n, 'A'
+  int a[20], n, i,max,min,imax,imin; 
+  max = min = 0;
+  nhap_day(a, &n, 'A');
+  for (int i = 0; i<= n; i++) {
+    if (a[i] > max) {
+      a[i] = max;
+      imax = i;
+      }
+    if (a[i] < min) {
+      a[i] = min;
+      imin = i;
+      }
+  }
+  printf("so lon nhat trong day la %d, vi tri %d", max,imax);
+  printf("so nho nhat trong day la %d, vi tri %d", min, imin);
+}
