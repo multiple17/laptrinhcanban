@@ -1,0 +1,26 @@
+#include<stdio.h>
+void chuyen_he(int a[], int p, int n){
+  int res,res2,i;
+  res2=n;
+  i=0;
+  while (res2>0) {
+    res = res2%p;
+    res2 = res2/p;
+    a[i] = res;
+    i++;
+  }
+  printf("%d chuyen sang he so %d la:",n,p);
+  for (int j =i ; j>=0; j--){
+    printf("%d",a[j]);
+  }
+  printf("\n");
+}
+int main(){
+  int n,*t,a[20],b[20],c[20];
+  t=&n;
+  printf("nhap so can chuyen he:");
+  scanf("%d", t);
+  chuyen_he(a,2,n);
+  chuyen_he(b,8,n);
+  chuyen_he(c,16,n);
+}
