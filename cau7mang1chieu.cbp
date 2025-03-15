@@ -1,10 +1,10 @@
 #include<stdio.h>
-void in_day(int a[], *n){
-  for (int i = 0; i<*n; i++( {
+void in_day(int a[],int *n){
+  for (int i = 0; i<*n; i++) {
     printf("%d\t", a[i]);
     }
 }
-void nhap_day(int a[], *n, char ten) {
+void nhap_day(int a[],int *n, char ten) {
   printf("nhap so phan tu cua day %c:", ten);
   scanf("%d", n);
   for (int i = 0; i<*n; i++){
@@ -15,15 +15,13 @@ int main() {
   int n, a[20],res;
   nhap_day(a,&n, 'A');
   for (int i = n-1; i>=0; i--) {
-    for (int j =0; j<i; j++);
-      a[j] = res;
-      if (a+j > a+j+1) {
-        a[j+1] = a[j];
-        a[j] = res;
+    for (int j =0; j<i; j++){
+      res = a[j];
+      if (a[j] > a[j+1]) {
+        a[j] =a[j+1] ;
+        a[j+1] = res;
         }
       }
   }
    in_day(a,&n);
 }
-        
-  
