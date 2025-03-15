@@ -1,0 +1,20 @@
+#include<stdio.h>
+int giai_thua(int n){
+    int p;
+  if ( (n ==1)||(n==2)){
+    p = n;
+    return p;
+  }
+  else {
+    for ( int i =3; i<= n; i++){
+      p = i*giai_thua(i-1);
+      }
+    return p;
+  }
+}
+int main() {
+  int n;
+  printf("nhap so n:");
+  scanf("%d", &n);
+  printf("%d", giai_thua(n));
+}
