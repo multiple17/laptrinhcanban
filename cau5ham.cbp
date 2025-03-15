@@ -10,7 +10,7 @@ void chuyen_he(int a[], int p, int n){
     i++;
   }
   printf("%d chuyen sang he so %d la:",n,p);
-  for (int j =i ; j>=0; j--){
+  for (int j =i-1 ; j>=0; j--){
     printf("%d",a[j]);
   }
   printf("\n");
