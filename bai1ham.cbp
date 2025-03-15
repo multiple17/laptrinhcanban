@@ -1,0 +1,15 @@
+#include<stdio.h>
+void luy_thua(int m, int *n) {
+  for (int i= 1; i<= *n; i++){
+    m*=m;;
+  }
+  printf("%ld", x);
+}
+int main() {
+  int x,y;
+  printf("nhap co so x:");
+  scanf("%d", &x);
+  printf("nhap he so luy thua:");
+  scanf("%d", &y);
+  luy_thua(x,y);
+}
