@@ -1,0 +1,57 @@
+#include<stdio.h>
+int luy_thua(int x, int n) {
+  int res = x;
+  int tich =x;
+  if (n==0) {
+    return 1;
+      }
+  else if (n ==1) {
+    return x;
+  }
+  else {
+    for (int i=2; i<n; i++) {
+      tich=res*luy_thua(x,i-1);
+      }
+    return tich;
+  }
+}
+void nhap_he_so(int a[], int *n, char ten){
+    printf("nhap cac he so cua da thuc: %c", ten);
+    for (int i = 0; i<*n; i++) {
+      scanf("%d", a+i);
+    }
+}
+int tinh_gia_tri(int a[],int x,int *n){
+  int tong=0;
+  for (int i = 0; i<*n; i++) {
+    tong += a[i]*luy_thua(x,i);
+  }
+  return tong;
+}
+void in_he_so(int a[], int *n, char ten) {
+  printf("cac he so cua da thuc %c la:", ten);
+  for (int i = 0; i<*n; i++){
+    printf("%d\t", a+i);
+  }
+  printf("\n");
+}
+int main() {
+  int x,*m, p[20],q[20],t[20],n;
+  m = &x;
+  printf("gia tri cua x la:");
+  scanf("%d",m);
+  printf("so he so cua da thuc:");
+  scanf("%d", &n);
+  nhap_he_so(p,n,'P');
+  nhap_he_so(q,n,'Q');
+  for (int i=0; i <n;i++){
+    t[i] = p[i] + q[i];
+  }
+  in_he_so(p,n,'P');
+  in_he_so(q,n,'Q');
+  in_he_so(t,n,'T');
+  printf("gia tri cua x: %d", x);
+  printf("gia tri cua da thuc P la: %d\n", tinh_gia_tri(p,x,n));
+  printf("gia tri cua da thuc Q la: %d\n", tinh_gia_tri(q,x,n));
+  printf("gia tri cua da thuc T la: %d\n", tinh_gia_tri(t,x,n));
+}
