@@ -8,11 +8,11 @@ void in_mt(int a[][3],int n,int m){
     }
 
 }
-void nhap_mt(int *a,int n,int m){
+void nhap_mt(int a[][3],int n,int m){
     printf("nhap ma tran:\n");
     for (int i =0; i<n; i++){
         for (int j = 0; j<m; j++){
-            scanf("%d",a[i][j]);
+            scanf("%d",&a[i][j]);
         }
     }
 }
