@@ -19,10 +19,15 @@ int main() {
         printf("so luong:"); scanf("%d",&hang.so_luong);
         hang.thanh_tien = hang.so_luong*hang.don_gia;
     }
+    int tong_tien=0;
+    for (int i = 0; i<n; i++) {
+        tong_tien += hang.thanh_tien;
+    }
     printf("SO LIEU BAN HANG\n");
     printf("STT\tTen Hang\tDon Gia\tSo Luong\tThanh Tien\n");
     for (int i = 0; i<n; i++) {
         printf("%d\t%c\t%d\t%d\t%d\n",i+1,hang.ten_hang,hang.don_gia,hang.so_luong,hang.thanh_tien);
 
     }
+    printf("\3tTong Tien %d",tong_tien);
 }
