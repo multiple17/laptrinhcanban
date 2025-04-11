@@ -1,20 +1,21 @@
 #include <stdio.h>
-int main() {
     struct mathang 
         {
-            char ten_hang;
+            char ten_hang[20];
             int don_gia,so_luong;
             int thanh_tien;
             
         } danh_sach_mat_hang[20];
+int main() {
+
     #define hang danh_sach_mat_hang[i]
     int n;
     printf("nhap so luong mat hang :");
     scanf("%d",&n);
     for (int i =0; i<n; i++) {
-        printf("nhap thong tin ve mat hang thu %d\n", i+1);
-        fflush(stdin);
-        printf("ten hang:"); hang.ten_hang = getchar();
+        printf("nhap thong tin ve mat hang thu %d", i+1);
+        getchar();
+        printf("\nten hang:"); gets(hang.ten_hang);
         printf("don gia:"); scanf("%d",&hang.don_gia);
         printf("so luong:"); scanf("%d",&hang.so_luong);
         hang.thanh_tien = hang.so_luong*hang.don_gia;
