@@ -1,0 +1,125 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<string.h>
+typedef strcut sinh_vien {
+    char ho_ten[25];
+    int tuoi;
+    float dtb;
+    struct sinh_vien *tiep;
+} p_sv;
+int co_psv =sizeof(p_sv);
+p_sv *pdau = NULL;
+char ch;
+void tao_ds(p_sv *pdau)
+{
+    p_sv *p;
+    char bht[25];
+    printf("NHAP DANH SACH SINH VIEN. NEU MUON KET THUC NHAP THI KHONG NHAP HO TEN\n");
+    *p_dau= NULL;
+    while(bht[0]!=0) {
+        getchar();
+        printf("Ho ten: "); gets(bht);
+        if (bht[0]!= 0) {
+            if(*p_dau == NULL){
+                *p_dau =(p_sv*)malloc(co_psv);
+                p =*p_dau;
+            }
+            else {
+                p->tiep =(p_sv*)malloc(co_psv);
+                p =p->tiep;
+
+            }
+        p->tiep =NULL;
+        strcpy(p->ho_ten,bht);
+        printf("Tuoi: "); scanf("%d", p->tuoi);
+        printf("Diem TB: "); scanf("%2.2f",p->dtb);
+        }
+    }
+}
+void hien_ds(p_sv *p_dau){
+    p_sv *p =p_dau;
+    printf("\4tDANH SACH SINH VIEN\n");
+    printf("STT\tHo ten\3tTuoi\tDiem TB");
+    int i=0;
+    while(p!=NULL){
+        printf("%3d\t%25s%2d\t%2.2f\n",i++,p->ho_ten,p->tuoi,p->dtb);
+        p=p->tiep;
+    }
+}
+void chen(p_sv *p_dau){
+    char bht[25];
+    p_sv *p, *ptim;
+    printf("Nhap ho ten can bo sung: "); gets(bht);
+    if(bht[0]!=0){
+        p=(p_sv*)malloc(co_psv);
+        p->tiep=NULL;
+        strcpy(p->ho_ten,bht);
+        printf("Tuoi: "); scanf("%d",p->tuoi);
+        printf("Diem TB: "); scanf("%2.2f",p->dtb);
+        getchar();
+        printf("Muon bo sung sau Sinh vien nao: "); gets(bht);
+        ptim=p_dau;
+        while((ptim!=NULL)&&(strcmpi(ptim->ho_ten,bht))){
+            ptim=ptim->tiep;
+        }
+        if(ptim==NULL){
+            printf("Khong tim thay vi tri de bo sung!");
+        }
+        else{
+            if(ptim->tiep==NULL){
+                ptim->tiep=p;
+            }
+            else{
+                p->tiep=ptim->tiep;
+                ptim->tiep =p;
+            }
+            printf("Da bo sung xong!");
+        }
+    }
+}
+void xoa(p_sv *p_dau){
+    char bht[25];
+    p_sv *ptruoc,*ptim;
+    printf("Nhap Ho ten Sinh vien can xoa: "); gets(bht);
+    ptim=*p_dau;
+    while((ptim!=NULL)&&(strcmpi(ptim->ho_ten,bht))){
+        ptruoc=ptim;
+        ptim=ptim->tiep;
+    }
+    if(ptim==NULL){
+        printf("Khong tim thay Sinh vien can xoa!");
+    }
+    else {
+        if(ptim==*p_dau){
+            *p_dau=ptim->tiep;
+        }
+        else {
+            if(ptim->tiep==NULL){
+                ptruoc->tiep=NULL;
+            }
+            else
+                ptruoc->tiep=ptim->tiep;
+        }
+        free(ptim);
+        printf("Da xoa xong!");
+    }
+
+}
+int main(){
+    while(ch!='5'){
+        printf("\2tCHON CHUC NANG CAN THUC HIEN\n");
+        printf("\2t1.Tao danh sach\n");
+        printf("\2t2.Hien danh sach\n");
+        printf("\2t3.Chen them\n");
+        printf("\2t4.Loai bo\n");
+        printf("\2t5.Ket thuc\n");
+        ch=getchar();
+        switch(ch){
+            case '1':tao_ds(&p_dau); break;
+            case '2':hien_ds(&p_dau); break;
+            case '3':chen(&p_dau); break;
+            case '4':xoa(&p_dau); break;
+        }
+        getchar();
+    }
+}
