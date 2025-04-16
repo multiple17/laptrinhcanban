@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main() {
+    int a,b,*p,*q;
+    a=*p;
+    b=*q;
+    printf("nhap gia tri a:"); scanf("%d",p);
+    printf("nhap gia tri b:"); scanf("%d",q);
+    a =*q;
+    b =*p;
+    printf("gia tri a moi: %d\n",a);
+    printf("gia tri b moi: %d",b);
+}
